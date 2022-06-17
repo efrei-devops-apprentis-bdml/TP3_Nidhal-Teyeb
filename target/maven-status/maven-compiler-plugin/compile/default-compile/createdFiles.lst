@@ -1,0 +1,10 @@
+com/nidhalteyeb/devops/service/WeatherUrlFormatter.class
+com/nidhalteyeb/devops/service/WeatherService.class
+com/nidhalteyeb/devops/model/WeatherUnit.class
+com/nidhalteyeb/devops/Main$MyApp.class
+com/nidhalteyeb/devops/Main.class
+com/nidhalteyeb/devops/api/WeatherApi.class
+com/nidhalteyeb/devops/internal/http/HttpService.class
+com/nidhalteyeb/devops/internal/http/HttpStatusCode.class
+com/nidhalteyeb/devops/service/WeatherRequest.class
+com/nidhalteyeb/devops/service/WeatherRequest$Builder.class
