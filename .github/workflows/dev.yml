@@ -15,7 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HERE_API_KEY: ${{ secrets.HERE_API_KEY }}
+      REGISTRY_LOGIN_SERVER: ${{ secrets.REGISTRY_LOGIN_SERVER }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -50,9 +50,8 @@ jobs:
           login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-      - run: |
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/20180414:v1
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/20180414:v1
+      - run:
+          ./mvnw clean package
 
       - name: Deploy to Azure Container Instances
         uses: 'azure/aci-deploy@v1'
