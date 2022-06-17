@@ -51,7 +51,8 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/20211018:v1
+          ./mvnw package -Pnative
+          docker build -f src/main/docker/Dockerfile.native -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/20211018:v1
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/20211018:v1
 
       - name: Deploy to Azure Container Instances
